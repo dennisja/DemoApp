@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Giselle | Profile</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 100vw;
+        height: 100vh;
+        grid-template-areas:
+          'sidebar profile-title'
+          'sidebar profile-info'
+          'sidebar profile-info';
+      }
+
+      section:first-child {
+        grid-area: sidebar;
+        width: 20vw;
+      }
+
+      section:last-child {
+        grid-area: profile-info;
+        width: 80vw;
+        height: 70vh;
+      }
+
+      section:nth-child(2) {
+        grid-area: profile-title;
+        width: 80vw;
+        height: 30vh;
+        display: grid;
+        grid-template-rows: repeat(1fr, 4);
+      }
+
+      section {
+        border: 1px solid red;
+      }
+
+      #user-details {
+        display: flex;
+        grid-row: 1/2;
+        justify-content: flex-end;
+      }
+
+      #user-details span {
+        align-self: center;
+      }
+
+      #user-details + div {
+        grid-row: 2/5;
+        text-align: center;
+      }
+
+      #user-details + div > div {
+        margin-top: 2vh;
+        color: rgba(0, 0, 0, 0.6);
+      }
+
+      #user-details img {
+        border-radius: 50%;
+        display: inline-block;
+        align-self: center;
+        margin: 0 2vh;
+      }
+
+      #user-details span {
+        color: rgba(0, 0, 0, 0.6);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section>
+        <div id="sidebar-info">
+          <button>-></button>
+          <div>Giselle</div>
+        </div>
+        <nav id="sidebar-nav">
+          <ul>
+            <li>Account</li>
+            <li>Career</li>
+            <li>Personal</li>
+            <li>Manage</li>
+            <li>Password</li>
+            <li>Email</li>
+          </ul>
+        </nav>
+      </section>
+      <section>
+        <div id="user-details">
+          <span>Giselle</span>
+          <img
+            src="http://via.placeholder.com/50"
+            alt="Giselle Profile Picture"
+            width="40px"
+            height="40px"
+          />
+        </div>
+        <div>
+          <header><h1>Your Account</h1></header>
+          <div>Tell us a little more about yourself</div>
+        </div>
+      </section>
+      <section>
+        <header><h2>Personal Information</h2></header>
+
+        <form>
+          <input type="text" placeholder="First Name" />
+          <input type="text" placeholder="Last Name" />
+          <input type="text" placeholder="Phone" />
+          <select name="Country" id="">
+            <option value="1">United States</option>
+            <option value="2">Uganda</option>
+            <option value="3">South Africa</option>
+            <option value="4">Kenya</option>
+          </select>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
