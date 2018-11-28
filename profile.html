@@ -5,166 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Giselle | Profile</title>
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-      }
-
-      main {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        width: 100vw;
-        height: 100vh;
-        grid-template-areas:
-          'sidebar profile-title'
-          'sidebar profile-info'
-          'sidebar profile-info';
-      }
-
-      section:first-child {
-        grid-area: sidebar;
-        width: 20vw;
-        border-right: 1px solid rgba(0, 0, 0, 0.1);
-      }
-
-      section:last-child {
-        grid-area: profile-info;
-        height: 75vh;
-        text-align: center;
-        padding: 4%;
-      }
-
-      section:last-child form {
-        margin-top: 2%;
-        display: grid;
-      }
-
-      section:last-child form div {
-        padding: 2%;
-      }
-
-      input,
-      select {
-        width: 50%;
-        box-sizing: border-box;
-        box-shadow: none;
-        outline: none;
-        border: none;
-        border-bottom: 2px solid rgba(0, 0, 0, 0.3);
-        padding: 5px 2px;
-      }
-
-      select {
-        background: white;
-        -webkit-appearance: none;
-        -webkit-border-radius: 0px;
-        background-image: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='24' height='24' viewBox='0 0 24 24'><path fill='#444' d='M7.406 7.828l4.594 4.594 4.594-4.594 1.406 1.406-6 6-6-6z'></path></svg>");
-        background-position: 100% 50%;
-        background-repeat: no-repeat;
-        color: rgba(0, 0, 0, 0.6);
-      }
-
-      section:nth-child(2) {
-        grid-area: profile-title;
-        width: 80vw;
-        height: 25vh;
-        display: grid;
-        grid-template-rows: repeat(1fr, 4);
-        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-      }
-
-      #user-details {
-        display: flex;
-        grid-row: 1/2;
-        justify-content: flex-end;
-      }
-
-      #user-details span {
-        align-self: center;
-      }
-
-      #user-details + div {
-        grid-row: 2/5;
-        text-align: center;
-      }
-
-      #user-details + div > div {
-        margin-top: 2vh;
-        color: rgba(0, 0, 0, 0.6);
-      }
-
-      #user-details img {
-        border-radius: 50%;
-        display: inline-block;
-        align-self: center;
-        margin: 0 2vh;
-      }
-
-      #user-details span {
-        color: rgba(0, 0, 0, 0.6);
-      }
-
-      #sidebar-info {
-        display: grid;
-        height: 15vh;
-        padding-top: 20px;
-        padding-left: 15px;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-      }
-
-      #sidebar-info button {
-        display: block;
-        height: 40px;
-        width: 40px;
-        border-radius: 50%;
-        border: none;
-      }
-
-      #sidebar-info div {
-        font-size: 30px;
-        font-weight: bold;
-      }
-
-      #sidebar-nav ul {
-        display: grid;
-      }
-
-      #sidebar-nav ul li {
-        display: block;
-        padding-left: 15px;
-        padding-bottom: 15px;
-        padding-top: 15px;
-        color: rgba(0, 0, 0, 0.6);
-      }
-
-      #sidebar-nav ul li.active {
-        background-color: rgba(0, 0, 0, 0.1);
-        color: black;
-        font-weight: bold;
-      }
-    </style>
+    <link rel="stylesheet" href="profile.css" />
   </head>
   <body>
     <main>
       <section>
         <div id="sidebar-info">
           <button>
-            <!-- <svg
+            <svg
               width="20"
               height="20"
               xmlns="http://www.w3.org/2000/svg"
               fill-rule="evenodd"
               clip-rule="evenodd"
-              aria-disabled="true"
+              display="none"
             >
               <path
                 d="M2.117 12l7.527 6.235-.644.765-9-7.521 9-7.479.645.764-7.529 6.236h21.884v1h-21.883z"
               />
-            </svg> -->
+            </svg>
 
-            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24">
-              <path fill="red" d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm1 17v-4h-8v-2h8v-4l6 5-6 5z"/>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="40"
+              height="40"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="red"
+                d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm1 17v-4h-8v-2h8v-4l6 5-6 5z"
+              />
             </svg>
           </button>
           <div>Giselle</div>
@@ -213,5 +83,6 @@
         </form>
       </section>
     </main>
+    <script src="profile.js"></script>
   </body>
 </html>
