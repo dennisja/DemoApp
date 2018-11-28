@@ -14,6 +14,7 @@ window.onload = function() {
   const menuItems = [...document.querySelectorAll('#sidebar-nav li')];
   const emailForm = document.querySelector('#email-form');
   const personalForm = document.querySelector('#personal-form');
+  const formHeader = document.querySelector('section:last-child header h2');
 
   sidebarToggleButton.onclick = handleSidebarToggle;
   menuItems.forEach((menuItem) => {
@@ -55,9 +56,11 @@ window.onload = function() {
     if (itemText === 'Personal') {
       emailForm.style.display = 'none';
       personalForm.style.display = 'block';
+      formHeader.textContent = 'Personal Information';
     } else if (itemText === 'Email') {
       emailForm.style.display = 'block';
       personalForm.style.display = 'none';
+      formHeader.textContent = 'Change Email Address';
     }
   }
 };
