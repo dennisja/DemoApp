@@ -139,3 +139,7 @@ section:nth-child(2) {
 .hidden {
   display: none;
 }
+
+#email-form{
+  display: none;
+}

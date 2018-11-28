@@ -11,8 +11,14 @@ window.onload = function() {
   const sidebarMenu = document.querySelector('#sidebar-nav');
   const sidebarInfo = document.querySelector('#sidebar-info');
   const sidebar = document.querySelector('section:first-child');
+  const menuItems = [...document.querySelectorAll('#sidebar-nav li')];
+  const emailForm = document.querySelector('#email-form');
+  const personalForm = document.querySelector('#personal-form');
 
   sidebarToggleButton.onclick = handleSidebarToggle;
+  menuItems.forEach((menuItem) => {
+    menuItem.onclick = handleMenuItemClick;
+  });
 
   function handleSidebarToggle(e) {
     SIDEBAR_IS_VISIBLE = !SIDEBAR_IS_VISIBLE;
@@ -33,6 +39,25 @@ window.onload = function() {
       sidebarMenu.style.display = 'none';
       sidebarInfo.style.height = '23vh';
       sidebar.style.borderRight = 'none';
+    }
+  }
+
+  function handleMenuItemClick(e) {
+    const itemText = e.target.textContent;
+    // remove active class from any of the other elements
+    menuItems.forEach((menuItem) => {
+      if (menuItem.classList.contains('active')) {
+        menuItem.classList.remove('active');
+      }
+    });
+    // add active class to selected item
+    e.target.classList.add('active');
+    if (itemText === 'Personal') {
+      emailForm.style.display = 'none';
+      personalForm.style.display = 'block';
+    } else if (itemText === 'Email') {
+      emailForm.style.display = 'block';
+      personalForm.style.display = 'none';
     }
   }
 };
