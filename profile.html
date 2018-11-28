@@ -25,6 +25,7 @@
       section:first-child {
         grid-area: sidebar;
         width: 20vw;
+        border-right: 1px solid rgba(0, 0, 0, 0.1);
       }
 
       section:last-child {
@@ -54,7 +55,6 @@
         padding: 5px 2px;
       }
 
-
       select {
         background: white;
         -webkit-appearance: none;
@@ -71,10 +71,7 @@
         height: 25vh;
         display: grid;
         grid-template-rows: repeat(1fr, 4);
-      }
-
-      section {
-        border: 1px solid red;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
       }
 
       #user-details {
@@ -107,23 +104,79 @@
       #user-details span {
         color: rgba(0, 0, 0, 0.6);
       }
+
+      #sidebar-info {
+        display: grid;
+        height: 15vh;
+        padding-top: 20px;
+        padding-left: 15px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      }
+
+      #sidebar-info button {
+        display: block;
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        border: none;
+      }
+
+      #sidebar-info div {
+        font-size: 30px;
+        font-weight: bold;
+      }
+
+      #sidebar-nav ul {
+        display: grid;
+      }
+
+      #sidebar-nav ul li {
+        display: block;
+        padding-left: 15px;
+        padding-bottom: 15px;
+        padding-top: 15px;
+        color: rgba(0, 0, 0, 0.6);
+      }
+
+      #sidebar-nav ul li.active {
+        background-color: rgba(0, 0, 0, 0.1);
+        color: black;
+        font-weight: bold;
+      }
     </style>
   </head>
   <body>
     <main>
       <section>
         <div id="sidebar-info">
-          <button>-></button>
+          <button>
+            <!-- <svg
+              width="20"
+              height="20"
+              xmlns="http://www.w3.org/2000/svg"
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              aria-disabled="true"
+            >
+              <path
+                d="M2.117 12l7.527 6.235-.644.765-9-7.521 9-7.479.645.764-7.529 6.236h21.884v1h-21.883z"
+              />
+            </svg> -->
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24">
+              <path fill="red" d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm1 17v-4h-8v-2h8v-4l6 5-6 5z"/>
+            </svg>
+          </button>
           <div>Giselle</div>
         </div>
         <nav id="sidebar-nav">
           <ul>
-            <li>Account</li>
-            <li>Career</li>
-            <li>Personal</li>
-            <li>Manage</li>
-            <li>Password</li>
-            <li>Email</li>
+            <li><a>Account</a></li>
+            <li><a>Career</a></li>
+            <li class="active"><a>Personal</a></li>
+            <li><a>Manage</a></li>
+            <li><a>Password</a></li>
+            <li><a>Email</a></li>
           </ul>
         </nav>
       </section>
